@@ -1,6 +1,9 @@
 package flujo_de_datos;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.io.Reader;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +18,7 @@ public class main {
 		//System.out.append("Append Agregado");
 		//System.flush();
 		
+		/*
 		System.out.write(64);
 		System.out.write(32);
 		System.out.write(64);
@@ -32,9 +36,34 @@ public class main {
 		
 		Logger.getLogger(main.class.getName()).log(Level.SEVERE, "Que hiciste Boludo?");
 		
-		PrintStream ps= new PrintStream( System.out );
 		ps.print("Que Onda?");
+		*/
+		
+		//PrintStream es el canal de comunicaciones para no usar directamente System.
+		//____________CLASE__READER
+		
+		//Input: entrada
+		//Stream: canal de comunicación
+		//Reader: lector
+
+		PrintStream ps= new PrintStream( System.out );
+
+		
+		Reader obj= new InputStreamReader( System.in );
+		InputStreamReader obj2= new InputStreamReader(System.in);
+		
+		try {
+			ps.print( obj.read() );
+			//ps.print( (char)obj.read() );
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		//obj2.getEncoding();
 	
+		
 	}
 
 }
