@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.io.Reader;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -62,7 +64,15 @@ public class main {
 		}
 		
 		//obj2.getEncoding();
-	
+		
+		//MAP Y HASHMAP
+		Map< String, String > inglesEspañol= new HashMap<String, String>();
+		
+		inglesEspañol.put("Hello", "Hola");
+		inglesEspañol.put("Bye", "Chau");
+		
+		inglesEspañol.containsValue("Hola");
+		inglesEspañol.replace("Hello", "Holis");
 		
 	}
 
