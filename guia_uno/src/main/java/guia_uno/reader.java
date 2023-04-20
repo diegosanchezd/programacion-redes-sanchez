@@ -40,4 +40,11 @@ public class reader {
 		return num;
 	}
 	
+	public static double readerDouble(String preg){
+		String str= reading(preg);
+		
+		double num= Double.parseDouble(str);
+		return num;
+	}
+	
 }

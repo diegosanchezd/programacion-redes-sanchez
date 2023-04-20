@@ -9,7 +9,7 @@ public class EjercicioTres {
 		PrintStream ps = new PrintStream(System.out);
 		
 		ps.print("Calcular Perimetro de un cuadrado \n");
-		int superficie= reader.readerInt("Ingrese la superficie: ");
+		double superficie= reader.readerDouble("Ingrese la superficie: ");
 		
 		double raiz= Math.sqrt(superficie);
 		double perimetro= raiz * 4;

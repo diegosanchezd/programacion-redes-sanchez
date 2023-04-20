@@ -8,15 +8,15 @@ public  class EjercicioUno {
 		
 		PrintStream ps= new PrintStream( System.out );
 
-			ps.print("Guia 1" + "\n");
+			
 			ps.print("Ejercicio 1: ");
 		
 			int sueldoBruto= 0;
 			
 			int horas= reader.readerInt("Ingrese cuantas horas trabajó: ");
-			int valorPorHora= reader.readerInt("Ingrese cuanto gana por hora: ");
+			double valorPorHora= reader.readerDouble("Ingrese cuanto gana por hora: ");
 		
-			int total= horas* valorPorHora;
+			double total= horas* valorPorHora;
 			ps.print("El total es: "+ total);
 		
 	}
