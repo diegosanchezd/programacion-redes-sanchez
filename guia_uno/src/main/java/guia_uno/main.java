@@ -6,48 +6,106 @@ import guia_uno.reader;
 
 public class main {
 
+	static PrintStream ps= new PrintStream( System.out );
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		PrintStream ps= new PrintStream( System.out );
 		
 		
-		ps.print("Guia 1" + "\n");
-		ps.println("Que puntos va a probar: ");
-		ps.print(" 1. System => Presione 1 \n 2. Readers => Presione 2 \n 3. No disponible... => Presione 3 \n 4. Colecciones => Presione 4 \n");
-		int elecMenu = reader.readerInt("Que menú desea ver: ");
-		
-		if(elecMenu == 1) {
+			ps.print("Guia 1" + "\n");
 			
-			ps.print("Menu de opciones de ejercicios con System: ");
-			ps.println("1=> Calcular Sueldo \n 2=> Resto de un Triangulo \n 3=> Perimetro de un cuadrado \n 4=>Farenheit a Centigrados \n 5=> Conversion de segundos \n 6=> Plan de pago \n 7=> Signo Zodiacal \n 0=>Salir");
-			int elecEjercicio= reader.readerInt("Ingrese opcion elegida: ");
-			
-			while( elecEjercicio != 0) {
-			ps.println("1=> Calcular Sueldo \n 2=> Resto de un Triangulo \n 3=> Perimetro de un cuadrado \n 4=>Farenheit a Centigrados \n 5=> Conversion de segundos \n 6=> Plan de pago \n 7=> Signo Zodiacal \n 0=>Salir");
-			if(elecEjercicio == 1) {
-				EjercicioUno.calcularSueldoBruto();
-			}else if(elecEjercicio == 2) {
-				EjercicioDos.calcularRestoTriangulo();
-			}else if(elecEjercicio == 3) {
-				EjercicioTres.calcularPerimetroCuadrado();
-			}else if(elecEjercicio == 4) {
-				ejercicioCuatro.farenheitACentigrados();
-			}else if(elecEjercicio == 5) {
-				EjercicioCinco.conversionSegundos();
-			}else if(elecEjercicio == 6) {
-				EjercicioSeis.planesDePago();
-			}else if(elecEjercicio == 7) {
-				EjercicioSiete.SignosZodiacales();
-			}else if(elecEjercicio == 0) {
-				ps.print("Adios");
-			}
-		  }
-		}
-		
+		while (true) {
+	         // Imprimir las opciones del menú
+	         ps.println("Seleccione una opción:");
+	         ps.println("1. Ejercicios con System");
+	         ps.println("2. Ejercicios con Reader");
+	         ps.println("3. Ejercicios con File");
+	         ps.println("3. Ejercicios con Diccionarios");
+	         ps.println("0. Salir");
+
+	         // Leer la entrada del usuario
+	         int opcion = reader.readerInt("Ingrese menú a ejecutar: ");
+
+	         // Ejecutar la opción seleccionada
+	         switch (opcion) {
+	            case 1:
+	               EjerciciosUnoMenu();
+	               break;
+	            case 2:
+	               System.out.println("Reader En construccion...");
+	               break;
+	            case 3:
+		               System.out.println("En construccion...");
+		               break;
+	            case 4:
+		               System.out.println("Colecciones En construccion...");
+		               break;
+	            case 0:
+	               System.out.println("Saliendo del programa...");
+	               return;
+	            default:
+	               System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+	               break;
+	         }
+	      }
 		
 		
 
 		
+	}
+	
+	public static void EjerciciosUnoMenu() {
+		while (true) {
+	         ps.println("Menú ejercicios con System:");
+	         ps.println("1. Calcular Sueldo Bruto");
+	         ps.println("2. Calcular Resto de un Triangulo");
+	         ps.println("3. Calcular Perimetro de un Cuadrado");
+	         ps.println("4. De Farenheit a Centigrados");
+	         ps.println("5. Conversion de Segundos");
+	         ps.println("6. Planes de pago");
+	         ps.println("7. Signo Zodiacal");
+	         ps.println("0. Salir");
+
+	         
+	         int opcion = reader.readerInt("------Ingrese ejercicio a ejecutar: ");
+
+	         switch (opcion) {
+	            case 1:
+	               System.out.println("Ha seleccionado Calcular Sueldo Bruto: ");
+	               EjerciciosUno.calcularSueldoBruto();
+	               break;
+	            case 2:
+	               System.out.println("Ha seleccionado Resto de un Triangulo");
+	               EjerciciosUno.calcularRestoTriangulo();
+	               break;
+	            case 3:
+		            System.out.println("Ha seleccionado Perimetro de un Cuadrado");
+		            EjerciciosUno.calcularPerimetroCuadrado();   
+		            break;
+	            case 4:
+		            System.out.println("Ha seleccionado De Farenheit a Centigrados");
+		            EjerciciosUno.farenheitACentigrados();
+		            break;
+	            case 5:
+		            System.out.println("Ha seleccionado Conversion de Segundos");
+		            EjerciciosUno.conversionSegundos();
+		            break;
+	            case 6:
+		            System.out.println("Ha seleccionado Planes de pago");
+		            EjerciciosUno.planesDePago();
+		            break;
+	            case 7:
+		            System.out.println("Ha seleccionado Signo Zodiacal");
+		            ps.println(EjerciciosUno.SignosZodiacales());
+		            break;
+	            case 0:
+	               System.out.println("Saliendo del menu Ej con Sytem...");
+	               return;
+	            default:
+	               System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+	               break;
+	         }
+	      }
 	}
 
 }
