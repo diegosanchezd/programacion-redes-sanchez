@@ -117,9 +117,10 @@ public class main {
 	         ps.println("2. Calcular el numero menor");
 	         ps.println("3. Calcular numero Par o Impar");
 	         ps.println("4. Calcular divisibilidad");
-	         ps.println("5. Conversion de Segundos");
-	         ps.println("6. Planes de pago");
-	         ps.println("7. Signo Zodiacal");
+	         ps.println("5. Signo Zodiacal");
+	         ps.println("6. Apellido Mas Largo");
+	         ps.println("7. Tabla de Multiplicar");
+	         ps.println("8. Es Primo");
 	         ps.println("0. Salir");
 
 	         
@@ -143,13 +144,20 @@ public class main {
 		            EjerciciosDos.calcularDivisibilidad();
 		            break;
 	            case 5:
-		            System.out.println("Ha seleccionado Conversion de Segundos");
+		            System.out.println("Ha seleccionado Signo Zodiacal");
+		            EjerciciosDos.signoZodiacal();
 		            break;
 	            case 6:
-		            System.out.println("Ha seleccionado Planes de pago");
+		            System.out.println("Ha seleccionado Apellido mas Largo");
+		            EjerciciosDos.apellidoMasLargo();
 		            break;
 	            case 7:
-		            System.out.println("Ha seleccionado Signo Zodiacal");
+		            System.out.println("Ha seleccionado Tabla de Multiplicar");
+		            EjerciciosDos.tablaDeMultiplicar();
+		            break;
+	            case 8:
+		            System.out.println("Ha seleccionado Comprobador de N Primos");
+		            EjerciciosDos.numeroPrimo();;
 		            break;
 	            case 0:
 	               System.out.println("Saliendo del menu Ej con Sytem...");

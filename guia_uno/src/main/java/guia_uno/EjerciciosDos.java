@@ -1,6 +1,7 @@
 package guia_uno;
 
 import java.io.PrintStream;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -69,8 +70,113 @@ public class EjerciciosDos {
 	
 //_________________EJERCICIO_5
 	
+	public static void signoZodiacal() {
+		
+		String fechaNacimiento= reader.leerReader("Ingrese la fecha de nacimiento (en formato dd/mm/aaaa): ");
+        LocalDate fecha = LocalDate.parse(fechaNacimiento, java.time.format.DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+        
+        int mes = fecha.getMonthValue();
+        int dia = fecha.getDayOfMonth();
+        
+        String signo = "";
+        if ((mes == 3 && dia >= 21) || (mes == 4 && dia <= 20)) {
+            signo = "Aries";
+        } else if ((mes == 4 && dia >= 21) || (mes == 5 && dia <= 20)) {
+            signo = "Tauro";
+        } else if ((mes == 5 && dia >= 21) || (mes == 6 && dia <= 21)) {
+            signo = "Géminis";
+        } else if ((mes == 6 && dia >= 22) || (mes == 7 && dia <= 22)) {
+            signo = "Cáncer";
+        } else if ((mes == 7 && dia >= 23) || (mes == 8 && dia <= 22)) {
+            signo = "Leo";
+        } else if ((mes == 8 && dia >= 23) || (mes == 9 && dia <= 22)) {
+            signo = "Virgo";
+        } else if ((mes == 9 && dia >= 23) || (mes == 10 && dia <= 22)) {
+            signo = "Libra";
+        } else if ((mes == 10 && dia >= 23) || (mes == 11 && dia <= 21)) {
+            signo = "Escorpio";
+        } else if ((mes == 11 && dia >= 22) || (mes == 12 && dia <= 21)) {
+            signo = "Sagitario";
+        } else if ((mes == 12 && dia >= 22) || (mes == 1 && dia <= 20)) {
+            signo = "Capricornio";
+        } else if ((mes == 1 && dia >= 21) || (mes == 2 && dia <= 18)) {
+            signo = "Acuario";
+        } else if ((mes == 2 && dia >= 19) || (mes == 3 && dia <= 20)) {
+            signo = "Piscis";
+        }
+
+        ps.println("--------------Tu signo del zodíaco es: " + signo +"--------------");
+		
+	}
+	
 	
 //_________________EJERCICIO_6
+	
+	public static void apellidoMasLargo() {
+		String nombreCompletoUno= reader.leerReader("Ingrese Nombre y Apellido: ");
+		String nombreCompletoDos= reader.leerReader("Ingrese segundo Nombre y Apellido: ");
+		
+		String apellidoUno= nombreCompletoUno.split(" ")[1];
+		String apellidoDos= nombreCompletoDos.split(" ")[1];
+
+		
+		if(apellidoUno.length() < apellidoDos.length()) {
+			ps.println("--------------El apellido de "+nombreCompletoDos.split(" ")[0] +" es mas largo--------------");
+		}else if(apellidoDos.length() < apellidoUno.length()) {
+			ps.println("--------------El apellido de "+nombreCompletoUno.split(" ")[0]+" es mas largo--------------");
+		}else {
+			ps.println("--------------Ambos son igual de largos--------------");
+		}
+		
+	}
+
+//_________________EJERCICIO_7
+	
+	public static void tablaDeMultiplicar() {
+		int num= reader.readerInt("Ingresa un numero para ver su tabla de multiplicar: ");
+		
+		for(int i= 1; i <= 10; i++) {
+			ps.println(num +" x "+ i+ " = "+ (num * i));
+		}
+	}
+
+//_________________EJERCICIO_8
+	
+	public static void numeroPrimo() {
+		int num= reader.leerIntBufferedReader("Ingrese numero para saber si es primo o no: ");
+		boolean esPrimo= true;
+		 if (num <= 1) {
+			 esPrimo=  false;
+	        }
+	     for (int i = 2; i <= Math.sqrt(num); i++) {
+	         if (num % i == 0) {
+	        	 esPrimo=  false;
+	            }
+	      }
+	     
+	    if(esPrimo) {
+	    	ps.print("---------"+ num+" Es Primo---------");
+	    }else {
+	    	ps.print("---------"+ num+" No es Primo---------");
+	    } 
+	}
+	
+	
+	
+
 
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
