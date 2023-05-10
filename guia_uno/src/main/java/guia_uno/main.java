@@ -19,7 +19,7 @@ public class main {
 	         ps.println("1. Ejercicios con System");
 	         ps.println("2. Ejercicios con Reader");
 	         ps.println("3. Ejercicios con File");
-	         ps.println("3. Ejercicios con Diccionarios");
+	         ps.println("4. Ejercicios con Collections");
 	         ps.println("0. Salir");
 
 	         // Leer la entrada del usuario
@@ -37,8 +37,8 @@ public class main {
 		               System.out.println("En construccion...");
 		               break;
 	            case 4:
-		               System.out.println("Colecciones En construccion...");
-		               break;
+	            	EjerciciosMenuCuatro();
+		             break;
 	            case 0:
 	               System.out.println("Saliendo del programa...");
 	               return;
@@ -130,6 +130,67 @@ public class main {
 	            case 1:
 	               System.out.println("Ha seleccionado Ordenar Apellidos: ");
 	               EjerciciosDos.apellidosOrdenados();
+	               break;
+	            case 2:
+	               System.out.println("Ha seleccionado Numero Menor");
+	               EjerciciosDos.numeroMenor();
+	               break;
+	            case 3:
+		            System.out.println("Ha seleccionado numero Par o Impar");
+		            EjerciciosDos.calcularPar();
+		            break;
+	            case 4:
+		            System.out.println("Ha seleccionado calcular si dos numeros son divisibles");
+		            EjerciciosDos.calcularDivisibilidad();
+		            break;
+	            case 5:
+		            System.out.println("Ha seleccionado Signo Zodiacal");
+		            EjerciciosDos.signoZodiacal();
+		            break;
+	            case 6:
+		            System.out.println("Ha seleccionado Apellido mas Largo");
+		            EjerciciosDos.apellidoMasLargo();
+		            break;
+	            case 7:
+		            System.out.println("Ha seleccionado Tabla de Multiplicar");
+		            EjerciciosDos.tablaDeMultiplicar();
+		            break;
+	            case 8:
+		            System.out.println("Ha seleccionado Comprobador de N Primos");
+		            EjerciciosDos.numeroPrimo();;
+		            break;
+	            case 0:
+	               System.out.println("Saliendo del menu Ej con Sytem...");
+	               return;
+	            default:
+	               System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+	               break;
+	         }
+	      }
+		
+		
+		
+	}
+	public static void EjerciciosMenuCuatro() {
+		while (true) {
+	         ps.println("Menú ejercicios con Collections:");
+	         ps.println("1. ");
+	         ps.println("2. ");
+	         ps.println("3. ");
+	         ps.println("4. ");
+	         ps.println("5. ");
+	         ps.println("6. ");
+	         ps.println("7. ");
+	         ps.println("8. ");
+	         ps.println("0. ");
+
+	         
+	         int opcion = reader.readerInt("------Ingrese ejercicio a ejecutar: ");
+
+	         switch (opcion) {
+	            case 1:
+	               System.out.println("Ha seleccionado 1: ");
+	               EjerciciosCuatro.pruebaLinkedList();
 	               break;
 	            case 2:
 	               System.out.println("Ha seleccionado Numero Menor");

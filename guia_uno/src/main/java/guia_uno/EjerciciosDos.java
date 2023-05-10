@@ -143,22 +143,25 @@ public class EjerciciosDos {
 //_________________EJERCICIO_8
 	
 	public static void numeroPrimo() {
+		
 		int num= reader.leerIntBufferedReader("Ingrese numero para saber si es primo o no: ");
-		boolean esPrimo= true;
-		 if (num <= 1) {
-			 esPrimo=  false;
-	        }
-	     for (int i = 2; i <= Math.sqrt(num); i++) {
-	         if (num % i == 0) {
-	        	 esPrimo=  false;
-	            }
-	      }
-	     
-	    if(esPrimo) {
-	    	ps.print("---------"+ num+" Es Primo---------");
-	    }else {
-	    	ps.print("---------"+ num+" No es Primo---------");
-	    } 
+		
+		if(num == 2) {
+			ps.print("2 es primo");
+			return;
+		}
+		
+		boolean isPrimo= false;
+		
+		for(int i = 2; i < num; i++) {
+			if(num % i == 0) {
+				ps.println(num+ " No es primo");
+				break;
+			}else {
+				ps.println(num+ " es primo");
+				break;
+			}
+		}
 	}
 	
 	
