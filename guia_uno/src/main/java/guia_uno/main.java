@@ -190,7 +190,7 @@ public class main {
 	         switch (opcion) {
 	            case 1:
 	               System.out.println("Ha seleccionado 1: ");
-	               EjerciciosCuatro.pruebaLinkedList();
+	               EjerciciosCuatro.E1();
 	               break;
 	            case 2:
 	               System.out.println("Ha seleccionado Numero Menor");
