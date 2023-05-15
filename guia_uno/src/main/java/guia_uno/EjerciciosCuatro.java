@@ -12,7 +12,7 @@ public class EjerciciosCuatro {
 	public static void E1() {
 		ps.println("Ejercicio 1");
 		
-		List<Integer> lista = new LinkedList();
+		LinkedList<Integer> lista = new LinkedList();
 		while(true) {
 			int num= reader.leerReaderInt("Ingrese un numero o -99 para salir: ");
 			if(num == -99) {
@@ -20,9 +20,8 @@ public class EjerciciosCuatro {
 			}
 			lista.add(num);
 		}
-		
+
 		mostrarResultados(lista);
-		
 	}
 	
 	//_____LEER NUMEROS
@@ -31,8 +30,7 @@ public class EjerciciosCuatro {
 		ps.println(lista);
 	}
 	
-	
-	
+	//_____CALCULAR_SUMA
 	public static double calcularSuma(List lista) {
 		
 		List<Integer> newList = lista;
@@ -44,26 +42,26 @@ public class EjerciciosCuatro {
 		return valorSuma;
 	}
 	
-	public static void mostrarResultados(List lista) {
+	//_____MOSTRAR_RESULTADOS
+	public static void mostrarResultados(LinkedList<Integer> lista) {
 		
 		leerValores(lista);
 		double promedio = calcularSuma(lista) / lista.size();
 		ps.println("----------Suma de todo: "+ calcularSuma(lista) + "----------");
 		ps.println("----------PROMEDIO: "+ promedio+"----------");
 		
-		List<Integer> newList = lista;
-		List<Integer> mayoresPromedio = lista;
-
-		
-
-		/*for(int num : newList) {
-			if(num > promedio) {
-				mayoresPromedio.add(num);
+		for(Integer numero : lista) {
+			if(numero > promedio) {
+				ps.println(numero +" es mayor al promedio");
 			}
+				
 		}
 		
-		ps.println("--------Los numeros mayores que el promedio son: ");
-		leerValores(mayoresPromedio);*/
+		
+	}
+	
+	public static void iterator() {
+		
 	}
 	
 	

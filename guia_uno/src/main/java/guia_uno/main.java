@@ -175,7 +175,7 @@ public class main {
 		while (true) {
 	         ps.println("Menú ejercicios con Collections:");
 	         ps.println("1. ");
-	         ps.println("2. ");
+	         ps.println("2. Iterator");
 	         ps.println("3. ");
 	         ps.println("4. ");
 	         ps.println("5. ");
@@ -194,7 +194,7 @@ public class main {
 	               break;
 	            case 2:
 	               System.out.println("Ha seleccionado Numero Menor");
-	               EjerciciosDos.numeroMenor();
+	               EjerciciosCuatro.iterator();;
 	               break;
 	            case 3:
 		            System.out.println("Ha seleccionado numero Par o Impar");
