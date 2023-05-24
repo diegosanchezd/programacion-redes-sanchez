@@ -174,8 +174,8 @@ public class main {
 	public static void EjerciciosMenuCuatro() {
 		while (true) {
 	         ps.println("Menú ejercicios con Collections:");
-	         ps.println("1. ");
-	         ps.println("2. Iterator");
+	         ps.println("1. Lista de Numeros, suma y promedio: ");
+	         ps.println("2. ");
 	         ps.println("3. ");
 	         ps.println("4. ");
 	         ps.println("5. ");
@@ -194,7 +194,7 @@ public class main {
 	               break;
 	            case 2:
 	               System.out.println("Ha seleccionado Numero Menor");
-	               EjerciciosCuatro.iterator();;
+	               EjerciciosCuatro.nacionalidadColegio();;
 	               break;
 	            case 3:
 		            System.out.println("Ha seleccionado numero Par o Impar");
