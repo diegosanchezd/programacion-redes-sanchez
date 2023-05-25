@@ -2,6 +2,7 @@ package recurses;
 
 import java.io.PrintStream;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -22,10 +23,15 @@ public class Colegio {
 	
 	public void showAll() {
 		int contador = 1;
-		for( Map.Entry<String, String> item : alumnos.entrySet() ) {
-			ps.println("Alumno N°"+contador+": "+ item.getKey() +", Nacionalidad:  "+ item.getValue());
-			contador++;
+		if(alumnos.size() >= 1) {
+			for( Map.Entry<String, String> item : alumnos.entrySet() ) {
+				ps.println("Alumno N°"+contador+": "+ item.getKey() +", Nacionalidad:  "+ item.getValue());
+				contador++;
+			}
+		}else {
+			ps.println("------Lista de alumnos vacia...--------");
 		}
+		
 	}
 	
 	public void showNacionalidad(String nacionalidad) {
@@ -38,7 +44,23 @@ public class Colegio {
 			}
 		}
 		
-		ps.print("--------------"+counter +"Alumnos con esa nacionalidad---------");
+		ps.println("--------------"+counter +" Alumnos con esa nacionalidad---------");
+	}
+	
+	public void howMany() {
+		
+		HashSet<String> nacionalidad = new HashSet<String>();
+		for( Map.Entry<String, String> item : alumnos.entrySet() ) {
+			nacionalidad.add(item.getValue());
+		}
+		ps.println("Las variedad de nacionalidades es: "+nacionalidad);
+	}
+	
+	public void removeAll() {
+		for(Map.Entry<String, String> item: alumnos.entrySet()) {
+			String key = item.getKey();
+			alumnos.remove(key);
+		}
 	}
 
 	

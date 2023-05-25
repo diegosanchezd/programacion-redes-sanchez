@@ -82,7 +82,15 @@ public class EjerciciosCuatro {
 		}
 		
 		et32.showAll();
-		et32.showNacionalidad("Argentino");
+		et32.showNacionalidad("argentina");
+		et32.howMany();
+		
+		String ifDelete = reader.leerReader("Desea borrar todos los alumnos? S/N: ");
+		if(ifDelete.toUpperCase().equals("S")) {
+			et32.removeAll();
+			et32.showAll();
+		}
+		
 	}
 	
 	

@@ -175,7 +175,7 @@ public class main {
 		while (true) {
 	         ps.println("Menú ejercicios con Collections:");
 	         ps.println("1. Lista de Numeros, suma y promedio: ");
-	         ps.println("2. ");
+	         ps.println("2. Lista de alumnos de ET32");
 	         ps.println("3. ");
 	         ps.println("4. ");
 	         ps.println("5. ");
