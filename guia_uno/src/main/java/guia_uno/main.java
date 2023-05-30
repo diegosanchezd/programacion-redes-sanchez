@@ -193,12 +193,12 @@ public class main {
 	               EjerciciosCuatro.E1();
 	               break;
 	            case 2:
-	               System.out.println("Ha seleccionado Numero Menor");
+	               System.out.println("Ha seleccionado Nacionalidad/Colegio");
 	               EjerciciosCuatro.nacionalidadColegio();;
 	               break;
 	            case 3:
-		            System.out.println("Ha seleccionado numero Par o Impar");
-		            EjerciciosDos.calcularPar();
+		            System.out.println("Ha seleccionado jugadores del BARCA");
+		            EjerciciosCuatro.jugadoresBarca();
 		            break;
 	            case 4:
 		            System.out.println("Ha seleccionado calcular si dos numeros son divisibles");

@@ -2,8 +2,12 @@ package guia_uno;
 
 import java.io.PrintStream;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+
 import recurses.Colegio;
 
 public class EjerciciosCuatro {
@@ -90,6 +94,58 @@ public class EjerciciosCuatro {
 			et32.removeAll();
 			et32.showAll();
 		}
+		
+	}
+	
+	public static void jugadoresBarca() {
+		HashSet<String> jugadores = new HashSet<String>();
+		jugadores.add("Jordi Alba");
+		jugadores.add("Pique");
+		jugadores.add("Busquets");
+		jugadores.add("Iniesta");
+		jugadores.add("Messi");
+		for( String jugador : jugadores ) {
+			ps.println("------Jugador: "+jugador+"-------");
+		}
+		
+		while(true) {
+			HashSet<String> jugadores2 = new HashSet<String>();
+			jugadores2.add("Pique");
+			jugadores2.add("Busquets");
+			
+			ps.println("0-Para salir");
+			ps.println("1-Saber si esta Neymar jr");
+			ps.println("2-Saber si los jugadores de la segunda lista estan en la primera");
+			int elec= reader.leerReaderInt("--Ingrese opcion: ");
+			
+			boolean isNeymar= false;
+			if(elec == 1) {
+				for( String jugador : jugadores ) {
+					if(jugador.equals("Neymar Jr")) {
+						isNeymar = true;
+						break;
+					}
+				}if(isNeymar) {
+					ps.println("Esta Neymar");
+				}else ps.println("-----------NO esta Neymar---------");
+			}else if(elec == 2) {
+				 Iterator<String> iterator = jugadores2.iterator();
+			        while (iterator.hasNext()) {
+			            String elemento = iterator.next();
+			            // Realizar operaciones con el elemento actual
+			            Iterator<String> iterator2 = jugadores.iterator();
+				        while (iterator.hasNext()) {
+				            String elemento2 = iterator.next();
+				            if(elemento == elemento2) {
+				            	ps.println("----------"+elemento+ " Esta en la lista jugadores-------");
+				            }
+				        }
+			        }
+			}else if(elec == 0) {
+				return;
+			}
+		}
+		
 		
 	}
 	
