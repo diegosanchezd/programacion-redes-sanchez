@@ -34,8 +34,8 @@ public class main {
 	            	EjerciciosMenuDos();
 	               break;
 	            case 3:
-		               System.out.println("En construccion...");
-		               break;
+	            	EjerciciosMenuTres();
+	            	break;
 	            case 4:
 	            	EjerciciosMenuCuatro();
 		             break;
@@ -171,6 +171,7 @@ public class main {
 		
 		
 	}
+	
 	public static void EjerciciosMenuCuatro() {
 		while (true) {
 	         ps.println("Menú ejercicios con Collections:");
@@ -191,6 +192,68 @@ public class main {
 	            case 1:
 	               System.out.println("Ha seleccionado 1: ");
 	               EjerciciosCuatro.E1();
+	               break;
+	            case 2:
+	               System.out.println("Ha seleccionado Nacionalidad/Colegio");
+	               EjerciciosCuatro.nacionalidadColegio();;
+	               break;
+	            case 3:
+		            System.out.println("Ha seleccionado jugadores del BARCA");
+		            EjerciciosCuatro.jugadoresBarca();
+		            break;
+	            case 4:
+		            System.out.println("Ha seleccionado calcular si dos numeros son divisibles");
+		            EjerciciosDos.calcularDivisibilidad();
+		            break;
+	            case 5:
+		            System.out.println("Ha seleccionado Signo Zodiacal");
+		            EjerciciosDos.signoZodiacal();
+		            break;
+	            case 6:
+		            System.out.println("Ha seleccionado Apellido mas Largo");
+		            EjerciciosDos.apellidoMasLargo();
+		            break;
+	            case 7:
+		            System.out.println("Ha seleccionado Tabla de Multiplicar");
+		            EjerciciosDos.tablaDeMultiplicar();
+		            break;
+	            case 8:
+		            System.out.println("Ha seleccionado Comprobador de N Primos");
+		            EjerciciosDos.numeroPrimo();;
+		            break;
+	            case 0:
+	               System.out.println("Saliendo del menu Ej con Sytem...");
+	               return;
+	            default:
+	               System.out.println("Opción inválida. Por favor, seleccione una opción válida.");
+	               break;
+	         }
+	      }
+		
+		
+		
+	}
+	
+	public static void EjerciciosMenuTres() {
+		while (true) {
+	         ps.println("Menú ejercicios con Files:");
+	         ps.println("1. EJ1 Files ");
+	         ps.println("2. Lista de alumnos de ET32");
+	         ps.println("3. ");
+	         ps.println("4. ");
+	         ps.println("5. ");
+	         ps.println("6. ");
+	         ps.println("7. ");
+	         ps.println("8. ");
+	         ps.println("0. ");
+
+	         
+	         int opcion = reader.readerInt("------Ingrese ejercicio a ejecutar: ");
+
+	         switch (opcion) {
+	            case 1:
+	               System.out.println("Ha seleccionado 1: ");
+	               EjerciciosTres.EJ1();
 	               break;
 	            case 2:
 	               System.out.println("Ha seleccionado Nacionalidad/Colegio");
