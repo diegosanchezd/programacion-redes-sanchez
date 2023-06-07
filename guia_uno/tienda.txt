@@ -1,0 +1,9 @@
+1-papel-1000-40
+2-Lapiz-780-90
+3-borrador-468-100
+4-Cartuchera-100-900
+5-Mochila-70-3000
+6-Marcadores-430-160
+7-Colores-500-800
+8-Tijera-180-300
+9-Carpeta-200-1000

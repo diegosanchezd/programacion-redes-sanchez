@@ -20,6 +20,7 @@ public class main {
 	         ps.println("2. Ejercicios con Reader");
 	         ps.println("3. Ejercicios con File");
 	         ps.println("4. Ejercicios con Collections");
+	         ps.println("5. Prototipo de Prueba");
 	         ps.println("0. Salir");
 
 	         // Leer la entrada del usuario
@@ -38,6 +39,9 @@ public class main {
 	            	break;
 	            case 4:
 	            	EjerciciosMenuCuatro();
+		             break;
+	            case 5:
+	            	//PrototipoPrueba.pruebaFiles();
 		             break;
 	            case 0:
 	               System.out.println("Saliendo del programa...");
