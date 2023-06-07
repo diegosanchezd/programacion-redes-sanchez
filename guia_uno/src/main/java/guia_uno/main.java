@@ -41,7 +41,7 @@ public class main {
 	            	EjerciciosMenuCuatro();
 		             break;
 	            case 5:
-	            	//PrototipoPrueba.pruebaFiles();
+	            	PrototipoPrueba.menu();
 		             break;
 	            case 0:
 	               System.out.println("Saliendo del programa...");
