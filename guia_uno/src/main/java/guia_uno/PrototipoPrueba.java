@@ -14,7 +14,6 @@ public class PrototipoPrueba {
 	static PrintStream ps= new PrintStream( System.out );
 	
 	public static String pruebaFiles() {
-		
 		String texto ="";
 
 		try {
@@ -40,13 +39,11 @@ public class PrototipoPrueba {
 		}
 		
 		//ps.print(texto);
-		return texto;
-		
+		return texto;		
 	}
 	
 	
 	public static String cambiarFormato() {
-		
 		String texto ="";
 		File archivo = new File("tienda.txt");
 
@@ -56,7 +53,7 @@ public class PrototipoPrueba {
 		
 		ps.println("___________SEPARADOR_______:"+ separadorAnterior);
 		String linea = "";
-		
+		 
 		try {
 			
 			FileReader fr = new FileReader(archivo);
@@ -87,18 +84,108 @@ public class PrototipoPrueba {
 		return texto;
 	}
 	
+	//__________________BORRAR
+	public static void borrarRegistro() {
+	    String texto = "";
+	    File archivo = new File("tienda.txt");
+	    String linea = "";
+	    char idAEliminar = reader.leerReaderChar("Ingrese ID de registro a eliminar: ");
+
+	    try {
+	        FileReader fr = new FileReader(archivo);
+	        BufferedReader br = new BufferedReader(fr);
+
+	        while ((linea = br.readLine()) != null) {
+	        	if (linea.isEmpty()) {
+	                continue;
+	            }
+	        	
+	            char id = linea.charAt(0);
+	            if (id == idAEliminar) {
+	                continue;
+	            }
+
+	            texto += linea + "\n";
+	        }
+
+	        br.close();
+	        fr.close();
+
+	        archivo.delete();
+
+	        FileOutputStream fos = new FileOutputStream(archivo);
+	        PrintStream writer = new PrintStream(fos);
+	        writer.println(texto);
+
+	        writer.flush();
+	        writer.close();
+	        fos.close();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        // Manejo de excepciones
+	    }
+	}
+	
+	//__________________ADD
+	public static void addRegistro() {
+	    String texto = "";
+	    File archivo = new File("tienda.txt");
+	    String linea = "";
+	    String name = reader.leerReader("Nombre Del producto: ");
+	    String stock = reader.leerReader("Stock Del producto: ");
+	    String price = reader.leerReader("Precio Del producto: ");
+
+	    try {
+	        FileReader fr = new FileReader(archivo);
+	        BufferedReader br = new BufferedReader(fr);
+
+	        while ((linea = br.readLine()) != null) {
+	            texto += linea + "\n";
+	        }
+	        
+	        String[] lines = texto.split("\n");
+	        String lastLine= lines[lines.length - 1];
+	       
+	        int idRandom = (int) Math.round(Math.random() * 10000);
+	       
+	        char sep = lastLine.charAt(3);
+	        String newReg= idRandom+ " " + sep + " "+ name + " "+sep+ " "+stock+ " "+sep+ " "+ price; 
+	        texto += newReg;
+	        
+	        br.close();
+	        fr.close();
+	        archivo.delete();
+
+	        FileOutputStream fos = new FileOutputStream(archivo);
+	        PrintStream writer = new PrintStream(fos);
+	        writer.println(texto);
+
+	        writer.flush();
+	        writer.close();
+	        fos.close();
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        // Manejo de excepciones
+	    }
+	}
+
 	
 	public static void menu() {
-		
+	
 		pruebaFiles();
-		
 		while(true) {
 			
-			ps.println("1. Cambiar Formato / 2. Salir");
+			ps.println("1. Cambiar Formato / 2. Eliminar Registro / 3.Agregar Registro / 0. Salir ");
 			int eleccion= reader.leerIntBufferedReader("Ingrese opcion a ejecutar para el archivo: ");
 			
 			if(eleccion == 1) {
 				cambiarFormato();
+			}else if(eleccion == 2){
+				borrarRegistro();
+			}else if(eleccion == 3){
+				addRegistro();
 			}else if(eleccion == 0) {
 				break;
 			}

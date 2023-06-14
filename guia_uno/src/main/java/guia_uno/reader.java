@@ -67,6 +67,13 @@ public class reader {
 		return Integer.parseInt(text);
 	}
 	
+	//_________LEER CHAR CON READER: 
+	public static char leerReaderChar(String preg) {
+		String text=  leerReader(preg);
+		return text.charAt(0);
+	}
+	
+	
 	//_________LEER DOUBLE CON READER: 
 	public static double leerReaderDouble(String preg) {
 		String text=  leerReader(preg);
