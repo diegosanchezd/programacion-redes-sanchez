@@ -30,7 +30,7 @@ public class Archivo {
 			while( (linea = br.readLine() ) != null) {
 				
 				texto =  texto +linea.replaceAll( "\\+", ";") + '\n';
-				//ps.println(texto);
+				
 			}
 			
 			br.close();
@@ -50,6 +50,7 @@ public class Archivo {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			ErrorMsg(e.toString());
 		}
 		
 		return texto;
@@ -76,6 +77,7 @@ public class Archivo {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			ErrorMsg(e.toString());
 		}
 		
 		ps.println(texto);
@@ -132,10 +134,31 @@ public static String victorias() {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			ErrorMsg(e.toString());
 		}
 		
 		return texto;
 	}
+
+public static void ErrorMsg(String msg) {
+
+	File error = new File("crash.log");
+	try {
+		FileOutputStream fos = new FileOutputStream(error); 
+		PrintStream ps = new PrintStream(fos); 
+
+		ps.println(msg);
+		ps.flush();
+		ps.close();
+		fos.close();
+
+	} catch (FileNotFoundException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	}
+
+}
 	
 
 }

@@ -23,8 +23,10 @@ public class Programa {
 				Archivo.victorias();
 			}else if(el == 0) {
 				ps.println("ADIOS...");
-				
+				System.exit(0);
 				break;
+			}else {
+				ps.println("Opcion Invalida...");
 			}
 			
 		}
