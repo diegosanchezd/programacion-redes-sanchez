@@ -1,0 +1,5 @@
+EL numero en la posicion 1, osea 0, no se puede dividir, error del tipo ArithmeticException 
+EL numero en la posicion 3, osea 0, no se puede dividir, error del tipo ArithmeticException 
+En el file, numero 0 no se puede dividir, error del tipo ArithmeticException 
+En el file, numero 0 no se puede dividir, error del tipo ArithmeticException 
+
