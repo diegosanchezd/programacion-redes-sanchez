@@ -1,11 +1,19 @@
 package DTO;
 
-public class empleadoDTO {
-	
+import java.util.Objects;
+
+
+public class empleadoDTO implements generalDTO {
+
 	private int id;
 	private String nombre;
 	private String apellido;
 	private int rol;
+	
+	public empleadoDTO()
+	{
+		
+	}
 	
 	public empleadoDTO(int id, String nombre, String apellido, int rol) {
 		this.id = id;
@@ -45,16 +53,25 @@ public class empleadoDTO {
 	public void setRol(int rol) {
 		this.rol = rol;
 	}
+	
+	
+    /**
+     * Estos metodos son utiles para los DTO ya que son donde guardamos los
+     * datos de la DB como un objeto en memoria, nos servira para comparar mas
+     * rapido o para ver la existencia de los mismos en colecciones.
+     */
+    /**
+     * Tanto el metodo hashCode como equal son utilizados para la comparacion de
+     * objetos (de forma interna) en las colecciones,especialemente en los de
+     * tipo Diccionario ( MAP ) y su rescritura proporciona una mayor velocidad
+     * en la busqueda por comparaciones o existencia.
+     *
+     * @return Su valor unico en un Hash de 32 bytes
+     */  
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((apellido == null) ? 0 : apellido.hashCode());
-		result = prime * result + id;
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + rol;
-		return result;
+		return Objects.hash(apellido, id, nombre, rol);
 	}
 
 	@Override
@@ -66,28 +83,22 @@ public class empleadoDTO {
 		if (getClass() != obj.getClass())
 			return false;
 		empleadoDTO other = (empleadoDTO) obj;
-		if (apellido == null) {
-			if (other.apellido != null)
-				return false;
-		} else if (!apellido.equals(other.apellido))
-			return false;
-		if (id != other.id)
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (rol != other.rol)
-			return false;
-		return true;
+		return Objects.equals(apellido, other.apellido) && id == other.id && Objects.equals(nombre, other.nombre)
+				&& rol == other.rol;
 	}
 
 	
+	 /**
+     * El metodo toString nos permite mostrar los datos del objeto de manera
+     * sencilla para verifijar su informacion interna, recuerden que mostrar un
+     * objetos solo nos devuelve su direccion de memoria no sus datos.
+     *
+     * @return Por consola los datos del Objeto
+     */  
 	@Override
 	public String toString() {
 		return "empleadoDTO [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", rol=" + rol + "]";
 	}
-	
 
+	
 }
