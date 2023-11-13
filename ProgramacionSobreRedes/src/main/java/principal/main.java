@@ -15,6 +15,8 @@ public class main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		LinkedList<stockDTO> productosH2 = DAOFactory.getInstance().getDAO("stock").getAllH2();
+	    DAOFactory.getInstance().getDAO("stock").setAll(productosH2);
 		menu();
 	}
 	

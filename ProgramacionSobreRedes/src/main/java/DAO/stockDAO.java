@@ -227,4 +227,22 @@ public class stockDAO implements GeneralDAO<stockDTO>{
 		}
 	}
 
+	@Override
+	public LinkedList<stockDTO> getAllH2() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public int setAll(LinkedList<stockDTO> lista) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int setAllH2(LinkedList<stockDTO> lista) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

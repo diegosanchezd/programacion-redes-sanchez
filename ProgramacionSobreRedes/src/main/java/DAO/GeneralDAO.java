@@ -2,6 +2,8 @@ package DAO;
 
 import java.util.LinkedList;
 
+import DTO.stockDTO;
+
 public interface GeneralDAO<T> {
 	
 
@@ -16,7 +18,11 @@ public interface GeneralDAO<T> {
 
 
 	public LinkedList<T> getAll();
+	public LinkedList<T> getAllH2();
+	public int setAll(LinkedList<T> lista);
+	public int setAllH2(LinkedList<T> lista);
 
 	public T getById(int id);
+
 
 }

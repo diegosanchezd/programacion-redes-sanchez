@@ -40,6 +40,44 @@ public class connectionFactory {
 	
 }
 
+class H2 {
+	
+	private String driver = "jdbc:h2:tcp://localhost/~/tmp/h2db/ProgramacionSobreRedes";
+
+	private String db = "/test";
+	private String port = ":3306";
+	private String EngineDB = "mysql";
+	private String ip = "://localhost";
+
+	private String url = "jdbc:h2:~/test";
+	private String user = "sa";
+	private String pass = "sa";
+	
+	Connection conn = null;
+
+
+	public Connection getConnection() {
+
+		try {
+			conn = DriverManager.getConnection(url, user, pass);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return conn;
+	}
+
+	public void close() {
+		try {
+			conn.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}
+
 
 class MySQL {
 	private String driver = "com.mysql.cj.jdbc.Driver";
